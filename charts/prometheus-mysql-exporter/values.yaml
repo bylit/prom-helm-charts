@@ -55,8 +55,12 @@ serviceMonitor:
       # - endpoint: mysql1.dns.local
       #   name: mysql1
       #   port: 3307
+      #   user: user1
+      #   password: password1
       # - endpoint: mysql2.dns.local
       #   name: mysql2
+      #   user: user2
+      #   password: password2
     # Enable shared credentials for all targets
     sharedSecret:
       enabled: false

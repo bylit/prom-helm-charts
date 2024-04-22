@@ -91,6 +91,17 @@ Secret key for config
 {{- end -}}
 */}}
 
+{{/* Define a function to iterate over multi scraping targets  */}}
+{{- define "render_mysql_targets" -}}
+  {{- if .Values.mysql_targets -}}
+      {{- range  .Values.serviceMonitor.multipleTarget.targets }}
+      [client.{{ .name }}]
+      username={{ .user }}
+      password={{ .password }}
+      {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 {{/*
 Define overriding namespace
 */}}
