@@ -93,11 +93,13 @@ Secret key for config
 
 {{/* Define a function to iterate over multi scraping targets  */}}
 {{- define "render_mysql_targets" -}}
-  {{- if .Values.serviceMonitor.multipleTarget.targets -}}
+  {{- if and (.Values.serviceMonitor.multipleTarget.targets) (not .Values.serviceMonitor.multipleTarget.sharedSecret.enabled) -}}
       {{- range  .Values.serviceMonitor.multipleTarget.targets }}
+      {{- if and (.user) (.password) }}
       [client.{{ .name }}]
       user={{ .user }}
       password={{ .password }}
+      {{- end -}}
       {{- end -}}
   {{- end -}}
 {{- end -}}
