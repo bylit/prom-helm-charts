@@ -50,8 +50,7 @@ serviceMonitor:
   multipleTarget:
     enabled: false
     targets: []
-      # target connection information with name (required), endpoint (required) and port (optionnal)
-      # if sharedSecret is not enabled the name must match an entry client.{{ name }} existing in the secret
+      # target connection information with name (required), endpoint (required) and port (optional)
       # - endpoint: mysql1.dns.local
       #   name: mysql1
       #   port: 3307
