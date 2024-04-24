@@ -44,7 +44,7 @@ helm upgrade [RELEASE_NAME] [CHART] --install
 ### Multiple-target probes
 
 mysql_exporter now support multi-target probes using the `/probe` route. To enable this feature, set `serviceMonitor.multipleTarget.enabled` to `true` and define your targets in `serviceMonitor.multipleTarget.targets`.
-Credentials for each target should be referenced either in targets section or in the associate config file.
+Credentials for each target should be referenced either in targets section or in the associated config file.
 As an example, for a config file with two targets:
 
 ```yaml
@@ -79,7 +79,7 @@ password=password2
 ```
 
 The configuration file can be:
-- referenced using `mysql.existingConfigSecret`
+- referenced using `mysql.existingConfigSecret`;
 - created automatically in case user and password are specified for the target.
 If all your target use the same credentials, you can set `serviceMonitor.sharedSecret.enabled` to `true` and define the key name in `serviceMonitor.sharedSecret.name`.
 
